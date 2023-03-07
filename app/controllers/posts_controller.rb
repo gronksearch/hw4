@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
 
+  def index
+    @post = Post.all
+    #@current_user = User.find_by({ "id" => session["user_id"] })
+  end
+  
   def new
     @post = Post.new
     @post.place_id = params["place_id"]
